@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 
 import android.app.Notification;
+import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.ContentResolver;
 import android.content.Intent;
@@ -11,6 +12,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -48,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
                 builder.setLights(Color.RED,5000,5000);
                 //set nhac chuong thong bao
                 builder.setSound(Uri.parse(ContentResolver.SCHEME_ANDROID_RESOURCE+"://"+getPackageName()+"/"+R.raw.baiso01));
+
 
                 //show notification
                 mNotificationManager.notify(1,builder.build());
